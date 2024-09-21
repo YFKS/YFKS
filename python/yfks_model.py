@@ -19,10 +19,10 @@ def to_markdown(text):
 class YFKS:
     def __init__(self):
         self.messages = []
-        with open("prompt.json", "r", encoding='utf-8') as files:
+        with open("python/config/prompt.json", "r", encoding='utf-8') as files:
             self.prompt_json = json.load(files)
 
-        with open("token.json", "r", encoding='utf-8') as files:
+        with open("python/config/token.json", "r", encoding='utf-8') as files:
             self.token = json.load(files)
         genai.configure(api_key=self.token['token'])
 
@@ -41,7 +41,7 @@ class YFKS:
         return self.model.start_chat(history= self.prompt_json['history'])
 
     def send_chat(self, mes: str)-> GenerateContentResponse:
-        print(f"You:{mes}")
+
         self.messages.append({'role':'user',
                  'parts':[mes]})
 
@@ -52,7 +52,7 @@ class YFKS:
 
 
 
-        print(f"YFKS:{res.text}")
+#        print(f"YFKS:{res.text}")
         self.messages.append({'role':'model',
                  'parts':[res.text]})
         print("--------------------------------------------------------------")
