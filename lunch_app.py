@@ -2,7 +2,7 @@ from python.yfks_model import YFKS
 
 model = YFKS()
 
-model.send_chat("自己紹介がてら、アシスタントとして、あなたのできることを簡潔に纏めてください。")
+print(model.send_chat("自己紹介がてら、アシスタントとして、あなたのできることを簡潔に纏めてください。").text)
 
 is_end = False
 
