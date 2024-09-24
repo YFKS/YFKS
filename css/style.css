@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(32, 32, 32);
+    color: rgb(200, 220, 220);
+}
+
+.attention{
+    color: red;
+    font: bold;
+   
+}
+
+.emphasis{
+    text-weight:bold;
+}
